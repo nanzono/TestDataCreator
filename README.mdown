@@ -1,0 +1,41 @@
+# 実施方法
+
+## セットアップ
+
+まずは pip を入れる。
+
+```
+ $ sudo yum -y install python-setuptools
+ $ sudo easy_install pip
+```
+
+必要な依存パッケージをインストールする。
+
+```
+ $ sudo yum -y install python-devel mysql-devel
+ $ sudo pip install mysql-python
+ $ sudo pip freeze | grep -i mysql
+ MySQL-python==1.2.5
+```
+
+gitを入れる
+
+```
+$ sudo yum install git
+```
+
+RDSの設定を反映する
+
+$ nano ~/.bashrc
+
+```
+export RDS_host=your.rds.endpoint
+export RDS_port=3306
+export RDS_db=your.rds.dbname
+export RDS_user=your.rds.user
+export RDS_passwd=your.rds.user's.password
+```
+
+$ source ~/.bashrc
+
+
